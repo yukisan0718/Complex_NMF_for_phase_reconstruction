@@ -1,0 +1,1 @@
+It's no problem to leave this directory empty. Log files would be created automatically in it.
