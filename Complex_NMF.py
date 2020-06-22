@@ -225,7 +225,8 @@ def display_graph(Y, X, times, freqs, loss_func, num_iter):
     plt.title('An original spectrogram')
     plt.xlabel('Time [sec]')
     plt.ylabel('Frequency [Hz]')
-    plt.pcolormesh(times, freqs, 10*np.log10(np.abs(Y)), cmap='jet')
+    Y = 10*np.log10(np.abs(Y))
+    plt.pcolormesh(times, freqs, Y, cmap='jet')
     plt.colorbar(orientation='horizontal').set_label('Power')
     plt.savefig("./result/original_spec.png", dpi=200)
     
@@ -234,8 +235,9 @@ def display_graph(Y, X, times, freqs, loss_func, num_iter):
     plt.title('The approximation by complex NMF')
     plt.xlabel('Time [sec]')
     plt.ylabel('Frequency [Hz]')
-    plt.pcolormesh(times, freqs, 10*np.log10(np.abs(X)), cmap='jet')
-    plt.colorbar(orientation='horizontal').set_label('Power')
+    X = 10*np.log10(np.abs(X))
+    cm = plt.pcolormesh(times, freqs, X, cmap='jet', vmin=np.min(Y), vmax=np.max(Y))
+    plt.colorbar(cm, orientation='horizontal').set_label('Power')
     plt.savefig("./result/reconstructed_spec.png", dpi=200)
     
     #Plot the loss curve
