@@ -4,7 +4,7 @@ Complex NMF for phase reconstruction
 ## Overview
 Implementation of complex NMF algorithms proposed by H. Kameoka et. al. [1-2].
 
-The conventional NMF implicitly assumes additivity of magnitude (or power) spectrum, and does not take account of phase information. On the contrary, the "complex_NMF.py" is based on an algorithm using the phase information, it can reconstruct the original phase spectrum.
+Conventional NMF implicitly assumes additivity of magnitude (or power) spectrum, and does not take account of phase information. On the contrary, the "complex_NMF.py" is based on an algorithm using the phase information, it can reconstruct the original phase spectrum.
 
 
 ## Requirement
